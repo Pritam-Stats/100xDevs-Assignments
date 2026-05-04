@@ -3,7 +3,14 @@
 // Example Input: "Pixy Glee"
 // Example Output: "Hello, P.G!"
 
-export function greetWithInitials(name: string): string {
-    const initials = name.split(' ').map(word => word[0].toUpperCase()).join('.');
-    return `Hello, ${initials}.`;
+// export function greetWithInitials(name: string): string {
+//     const initials = name.split(' ').map(word => word[0].toUpperCase()).join('.');
+//     return `Hello, ${initials}.`;
+// }
+
+export function greet(name: string) : string {
+    const initials = name.split(' ').map(word => word[0].toUpperCase()).join(".");
+    return `Hello, ${initials}`;
 }
+
+console.log(greet("Pritam S"))

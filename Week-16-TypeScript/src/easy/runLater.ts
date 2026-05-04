@@ -3,3 +3,12 @@
 // Example Input: runLater(() => console.log("Hello!"), 2000)
 // Example Output: Prints "Hello!" after 2 seconds.
 
+type Callback = () => void;
+type Time = number;
+
+
+export function runLater(action: Callback, delay: Time) : void {
+    setTimeout(action, delay);
+}
+
+// runLater(() => {console.log("Pritam")}, 2000);
