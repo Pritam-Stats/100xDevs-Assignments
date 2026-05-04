@@ -7,8 +7,20 @@ type Callback = () => void;
 type Time = number;
 
 
-export function runLater(action: Callback, delay: Time) : void {
-    setTimeout(action, delay);
+//these are called JSDoc
+/**
+ * @param action - A callback function to run after the delay;     
+ * @param delay - a whole number in milliseconds;
+ */
+
+export function runLater(action: Callback, delay: number) : ReturnType<typeof setTimeout> {
+    if (! Number.isInteger(delay)) throw new Error("delay must be a whole number");     //use console warn and return to stop here only
+
+    return setTimeout(action, delay);
 }
 
-// runLater(() => {console.log("Pritam")}, 2000);
+try {
+    runLater(() => {console.log("Pritam")}, 2.220);
+} catch(err) {
+    console.log(err);
+}
